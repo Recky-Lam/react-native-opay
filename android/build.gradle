@@ -1,5 +1,7 @@
 
 buildscript {
+    System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+
     repositories {
         jcenter()
     }
@@ -25,16 +27,26 @@ android {
     lintOptions {
         abortOnError false
     }
+    sourceSets{
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
 repositories {
     mavenCentral()
+
+    flatDir {
+        dirs 'libs'
+    }
+
 }
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
 
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
-    implementation 'team.opay.pay:paysdk:1.2.0'
+    compile 'team.opay.pay:paysdk:1.2.0'
 }
   

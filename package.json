@@ -1,8 +1,7 @@
-
 {
   "name": "react-native-opay",
-  "version": "0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "## Getting started",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,9 +9,17 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "author": "ReckyLam",
+  "license": "ISC",
   "peerDependencies": {
     "react-native": "^0.41.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Recky-Lin/react-native-opay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Recky-Lin/react-native-opay/issues"
+  },
+  "homepage": "https://github.com/Recky-Lin/react-native-opay#readme"
 }
