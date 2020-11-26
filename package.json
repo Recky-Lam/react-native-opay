@@ -1,16 +1,17 @@
 {
   "name": "react-native-opay",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "## Getting started",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "opay"
   ],
   "author": "ReckyLam",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "peerDependencies": {
     "react-native": "^0.41.2"
   },
