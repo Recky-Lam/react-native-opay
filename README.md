@@ -42,4 +42,7 @@ import RNOpay from 'react-native-opay';
 // TODO: What to do with the module?
 RNOpay;
 ```
-  
+
+## Notice
+
+For the best experience, please use the latest version
