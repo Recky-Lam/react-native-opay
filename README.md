@@ -50,7 +50,15 @@ Not Supported Yet
 ```javascript
 import RNOpay from 'react-native-opay';
 
-RNOpay.initTransaction(String reference, String amount, String pubKey, String merchantUserId, String merchantUserName) {};
+var orderData = {
+	'reference' : 'Test_reference123456', // A unique id for your payment order
+	'amount' : '100', // Amount need to pay in kobo,  1N = 100 kobo
+	'pubKey' : 'OPAYPUB1234567890123',
+	'merchantUserId' : 'USER_ID',
+	'merchantUserName' : 'USER_NAME',
+}
+
+RNOpay.initTransaction(orderData) {};
 
 ```
 

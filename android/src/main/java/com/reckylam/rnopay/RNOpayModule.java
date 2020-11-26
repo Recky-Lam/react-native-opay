@@ -9,10 +9,14 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.ReadableMap;
+
 import com.opay.account.core.PayTask;
 import com.opay.account.iinterface.PayResultCallback;
 import com.opay.account.iinterface.ResultStatus;
 import com.opay.account.model.OrderInfo;
+
+import static android.text.TextUtils.isEmpty;
 
 public class RNOpayModule extends ReactContextBaseJavaModule {
 
@@ -26,16 +30,22 @@ public class RNOpayModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void initTransaction(String reference, String amount, String pubKey, String merchantUserId, String merchantUserName) {
-        double doubleAmount = Double.parseDouble(amount);
+    public void initTransaction(ReadableMap cardData) {
+
+        if (isEmpty(cardData.getString("reference")) || isEmpty(cardData.getString("amount")) || isEmpty(cardData.getString("pubKey")) || isEmpty(cardData.getString("merchantUserId")) || isEmpty(cardData.getString("merchantUserName"))) {
+            rejectPromise("E_INVALID_Info", "Invalid card info");
+            return;
+        }
+
+        double doubleAmount = Double.parseDouble(cardData.getString("amount"));
 
         OrderInfo info = new OrderInfo();
         info.setAmount(doubleAmount);
         info.setCurrency("NGN");
-        info.setMerchantName(merchantUserName);
-        info.setMerchantUserId(merchantUserId);
-        info.setReference(reference);
-        info.setPublicKey(pubKey);
+        info.setMerchantName(cardData.getString("merchantUserName"));
+        info.setMerchantUserId(cardData.getString("merchantUserId"));
+        info.setReference(cardData.getString("reference"));
+        info.setPublicKey(cardData.getString("pubKey"));
 
         try {
             createTransaction(info);
