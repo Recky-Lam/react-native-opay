@@ -1,7 +1,14 @@
 
 # react-native-opay
 
+### Author
+
+*Recky Lam*</br>
+If you have any feedback, questions, or concerns, please e-mail me via reckylam93@gmail.com
+
 ## Getting started
+
+For the best experience, please use the latest version
 
 `$ npm install react-native-opay --save`
 
@@ -11,13 +18,9 @@
 
 ### Manual installation
 
-
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-opay` and add `RNOpay.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNOpay.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+Not Supported Yet
 
 #### Android
 
@@ -39,17 +42,12 @@
 ```javascript
 import RNOpay from 'react-native-opay';
 
-// TODO: What to do with the module?
-RNOpay;
+RNOpay.initTransaction(String reference, String amount, String pubKey, String merchantUserId, String merchantUserName) {};
+
 ```
 
-## Notice
+## Contribution
 
-For the best experience, please use the latest version
-
-## Update Log
-
-1.0.0 Init<br/>
-1.0.2 Fixed some bug in project<br/>
-1.0.5 Compleate payment functions. wait for test.<br/>
-1.0.7 Compleate Documents.<br/>
+For Technical Support<br/>
+@huawo<br/>
+@Li Peng<br/>
