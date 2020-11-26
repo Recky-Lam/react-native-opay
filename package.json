@@ -10,7 +10,7 @@
     "react-native",
     "opay"
   ],
-  "author": "ReckyLam",
+  "author": "Recky Lam",
   "license": "Apache-2.0",
   "peerDependencies": {
     "react-native": "^0.41.2"
