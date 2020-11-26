@@ -6,6 +6,14 @@
 *Recky Lam*</br>
 If you have any feedback, questions, or concerns, please e-mail me via reckylam93@gmail.com
 
+##Introduction
+
+This React Native SDK makes it easy to integrate your applications & interact with the OPay.<br/>
+
+To complete payment function that you will need your Merchant information. Please visit OPay's API [documentation](https://documentation.opayweb.com/) for more information on how to get this.
+
+For more api [introduction](https://open.operapay.com/home/).
+
 ## Getting started
 
 For the best experience, please use the latest version
