@@ -46,3 +46,9 @@ RNOpay;
 ## Notice
 
 For the best experience, please use the latest version
+
+## Update Log
+
+1.0.0 Init
+1.0.2 Fixed some bug in project
+1.0.5 Compleate payment functions. wait for test.
