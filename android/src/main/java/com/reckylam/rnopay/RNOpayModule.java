@@ -74,16 +74,16 @@ public class RNOpayModule extends ReactContextBaseJavaModule {
     }
 
     private void rejectPromise(String code, String message) {
-        if (this.pendingPromise != null) {
-            this.pendingPromise.reject(code, message);
-            this.pendingPromise = null;
+        if (this.promise != null) {
+            this.promise.reject(code, message);
+            this.promise = null;
         }
     }
 
     private void resolvePromise(Object data) {
-        if (this.pendingPromise != null) {
-            this.pendingPromise.resolve(data);
-            this.pendingPromise = null;
+        if (this.promise != null) {
+            this.promise.resolve(data);
+            this.promise = null;
         }
     }
 
