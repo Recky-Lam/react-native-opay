@@ -1,4 +1,5 @@
 
+
 # react-native-opay
 
 ### Author
@@ -10,9 +11,9 @@ If you have any feedback, questions, or concerns, please e-mail me via reckylam9
 
 This React Native SDK makes it easy to integrate your applications & interact with the OPay.<br/>
 
-To complete payment function that you will need your Merchant information. Please visit OPay's API [documentation](https://documentation.opayweb.com/) for more on how to get this.
-
-For more [api introduction](https://open.operapay.com/home/).
+To complete payment that you will need your Merchant information. Remember to keep it safe.</br>
+Please visit [OPay's API Introduction](https://open.operapay.com/home/) for more .</br>
+For [OPay's Documentation](https://documentation.opayweb.com/).
 
 ## Getting started
 
@@ -64,6 +65,27 @@ RNOpay.initTransaction(orderData) {};
 ```
 
 ### Response & Error Code
+#### Response Object
+```
+{
+  'code':'9000';  
+  'message':'success';  
+  'reference':'OPAYPUB1234567890123';  
+  'amount':'100';
+}
+```
+#### Error Code
+```
+SUCCESS(9000, "success"),
+SERVER_ERROR(4000, "server error"),
+USER_CANCEL(6001, "user cancel"),
+NET_ERROR(6002, "net error"),
+PARAM_ERROR(4001, "param error"),
+REPEAT_REQUEST(5000, "repeat request"),
+PROCESSING(8000, "processing");
+```
+
+### Verify
 ```
 SUCCESS(9000, "success"),
 SERVER_ERROR(4000, "server error"),

@@ -30,22 +30,22 @@ public class RNOpayModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void initTransaction(ReadableMap cardData) {
+    public void initTransaction(ReadableMap data) {
 
-        if (isEmpty(cardData.getString("reference")) || isEmpty(cardData.getString("amount")) || isEmpty(cardData.getString("pubKey")) || isEmpty(cardData.getString("merchantUserId")) || isEmpty(cardData.getString("merchantUserName"))) {
+        if (isEmpty(data.getString("reference")) || isEmpty(data.getString("amount")) || isEmpty(data.getString("pubKey")) || isEmpty(data.getString("merchantUserId")) || isEmpty(data.getString("merchantUserName"))) {
             rejectPromise("E_INVALID_Info", "Invalid card info");
             return;
         }
 
-        double doubleAmount = Double.parseDouble(cardData.getString("amount"));
+        double doubleAmount = Double.parseDouble(data.getString("amount"));
 
         OrderInfo info = new OrderInfo();
         info.setAmount(doubleAmount);
         info.setCurrency("NGN");
-        info.setMerchantName(cardData.getString("merchantUserName"));
-        info.setMerchantUserId(cardData.getString("merchantUserId"));
-        info.setReference(cardData.getString("reference"));
-        info.setPublicKey(cardData.getString("pubKey"));
+        info.setMerchantName(data.getString("merchantUserName"));
+        info.setMerchantUserId(data.getString("merchantUserId"));
+        info.setReference(data.getString("reference"));
+        info.setPublicKey(data.getString("pubKey"));
 
         try {
             createTransaction(info);
