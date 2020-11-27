@@ -6,7 +6,7 @@
 *Recky Lam*</br>
 If you have any feedback, questions, or concerns, please e-mail me via reckylam93@gmail.com
 
-##Introduction
+## Introduction
 
 This React Native SDK makes it easy to integrate your applications & interact with the OPay.<br/>
 
@@ -47,7 +47,7 @@ Not Supported Yet
 
 
 ## Usage
-###Make a payment
+### Make a payment
 ```
 import RNOpay from 'react-native-opay';
 
@@ -63,7 +63,7 @@ RNOpay.initTransaction(orderData) {};
 
 ```
 
-###Response & Error Code
+### Response & Error Code
 ```
 SUCCESS(9000, "success"),
 SERVER_ERROR(4000, "server error"),
