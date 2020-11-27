@@ -20,7 +20,7 @@ import static android.text.TextUtils.isEmpty;
 
 public class RNOpayModule extends ReactContextBaseJavaModule {
 
-    private Promise pendingPromise;
+    private Promise promise;
 
     private final ReactApplicationContext reactContext;
 
@@ -30,12 +30,14 @@ public class RNOpayModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void initTransaction(ReadableMap data) {
+    public void initTransaction(ReadableMap data, final Promise promise) {
 
         if (isEmpty(data.getString("reference")) || isEmpty(data.getString("amount")) || isEmpty(data.getString("pubKey")) || isEmpty(data.getString("merchantUserId")) || isEmpty(data.getString("merchantUserName"))) {
             rejectPromise("E_INVALID_Info", "Invalid card info");
             return;
         }
+
+        this.promise = promise;
 
         double doubleAmount = Double.parseDouble(data.getString("amount"));
 
