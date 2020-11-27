@@ -66,9 +66,11 @@ PROCESSING(8000, "processing");
 
 ### Verify
 
-Verify a charge by calling OPay's [transaction/status](transaction/status)  with the  `reference`  mentioned before.</br>
+Verify a charge by calling OPay's [transaction/status](https://open.operapay.com/home/api/docbox_content_transaction.html#transaction-initialize)  with the  `reference`  mentioned before.</br>
 
 ## Known Issue
+
+For bugs Go [Github Repo Issues](https://github.com/Recky-Lin/react-native-opay/issues)
 
 1. Uses-sdk:minSdkVersion 'xx' cannot be smaller than version 'xx' declared in library [:react-native-opay]
 - Follow the 'Suggestions' in console.<br/>
