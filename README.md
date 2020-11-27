@@ -1,5 +1,6 @@
 
 
+
 # react-native-opay
 
 ### Author
@@ -24,28 +25,6 @@ For the best experience, please use the latest version
 ### Mostly automatic installation
 
 `$ react-native link react-native-opay`
-
-### Manual installation
-
-#### iOS
-
-Not Supported Yet
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reckylam.rnopay.RNOpayPackage;` to the imports at the top of the file
-  - Add `new RNOpayPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-    ```
-    include ':react-native-opay'
-    project(':react-native-opay').projectDir = new File(rootProject.projectDir,   '../node_modules/react-native-opay/android')
-    ```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-    ```
-      compile project(':react-native-opay')
-    ```
-
 
 ## Usage
 ### Make a payment
@@ -86,16 +65,33 @@ PROCESSING(8000, "processing");
 ```
 
 ### Verify
-```
-SUCCESS(9000, "success"),
-SERVER_ERROR(4000, "server error"),
-USER_CANCEL(6001, "user cancel"),
-NET_ERROR(6002, "net error"),
-PARAM_ERROR(4001, "param error"),
-REPEAT_REQUEST(5000, "repeat request"),
-PROCESSING(8000, "processing");
-```
 
+Verify a charge by calling OPay's [transaction/status](transaction/status)  with the  `reference`  mentioned before.</br>
+
+## Known Issue
+
+1. Uses-sdk:minSdkVersion 'xx' cannot be smaller than version 'xx' declared in library [:react-native-opay]
+- Follow the 'Suggestions' in console.
+-- Sync library minsdk version and project minsdk version.
+-- Or use tools:overrideLibrary="com.reckylam.rnopay" to force usage (not recommend, may lead to runtime failures)
+
+2. When  run 'yarn android' console output the following words:
+- RNOpayPackage.java:26 @Override
+- RNOpayManager.java:19
+-- Please update to the latest version.
+
+3. Could not find paysdk-debug
+- Add following codes to your project build.gradle -> allprojects -> repositories
+  ```Javascript
+  allprojects {
+      repositories {
+      ... //your code
+          flatDir {
+              dirs project(':xxx').file('libs')
+          }
+      }
+  }
+  ```
 ## Contribution
 
 For Technical Support<br/>

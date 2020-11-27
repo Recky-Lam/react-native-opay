@@ -15,10 +15,6 @@ public class RNOpayPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-//        List<NativeModule> modules = new ArrayList<>();
-//        modules.add(new RNOpayModule(reactContext));
-//        return modules;
-
         return Arrays.<NativeModule>asList(new RNOpayModule(reactContext));
 
     }
