@@ -71,13 +71,13 @@ Verify a charge by calling OPay's [transaction/status](transaction/status)  with
 ## Known Issue
 
 1. Uses-sdk:minSdkVersion 'xx' cannot be smaller than version 'xx' declared in library [:react-native-opay]
-- Follow the 'Suggestions' in console.
--- Sync library minsdk version and project minsdk version.
+- Follow the 'Suggestions' in console.<br/>
+-- Sync library minsdk version and project minsdk version.<br/>
 -- Or use tools:overrideLibrary="com.reckylam.rnopay" to force usage (not recommend, may lead to runtime failures)
 
 2. When  run 'yarn android' console output the following words:
-- RNOpayPackage.java:26 @Override
-- RNOpayManager.java:19
+- RNOpayPackage.java:26 @Override<br/>
+- RNOpayManager.java:19<br/>
 -- Please update to the latest version.
 
 3. Could not find paysdk-debug
