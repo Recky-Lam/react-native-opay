@@ -1,6 +1,6 @@
 {
   "name": "react-native-opay",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "This React Native SDK makes it easy to integrate your applications & interact with the OPay.",
   "main": "index.js",
   "scripts": {
