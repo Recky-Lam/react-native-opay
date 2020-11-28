@@ -86,7 +86,7 @@ $signature= hash_hmac("sha512", $body_json_string, OP_PRV_KEY, true);
 
 ## Known Issue
 
-For bugs Go [Github Repo Issues](https://github.com/Recky-Lin/react-native-opay/issues)
+For bugs Go [Github Repo Issues](https://github.com/Recky-Lam/react-native-opay/issues)
 
 > 1. Uses-sdk:minSdkVersion 'xx' cannot be smaller than version 'xx' declared in library [:react-native-opay]
 > + Follow the 'Suggestions' in console.<br/>
