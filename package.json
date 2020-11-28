@@ -1,7 +1,7 @@
 {
   "name": "react-native-opay",
   "version": "1.4.2",
-  "description": "## Getting started",
+  "description": "This React Native SDK makes it easy to integrate your applications & interact with the OPay.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Recky-Lin/react-native-opay.git"
+    "url": "git@github.com:Recky-Lam/react-native-opay.git"
   },
   "bugs": {
-    "url": "https://github.com/Recky-Lin/react-native-opay/issues"
+    "url": "https://github.com/Recky-Lam/react-native-opay/issues"
   },
-  "homepage": "https://github.com/Recky-Lin/react-native-opay#readme"
+  "homepage": "https://github.com/Recky-Lam/react-native-opay#readme"
 }
