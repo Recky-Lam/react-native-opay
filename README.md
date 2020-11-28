@@ -1,6 +1,4 @@
 
-
-
 # react-native-opay
 
 ### Author
@@ -66,34 +64,52 @@ PROCESSING(8000, "processing");
 
 ### Verify
 
-Verify a charge by calling OPay's [transaction/status](https://open.operapay.com/home/api/docbox_content_transaction.html#transaction-initialize)  with the  `reference`  mentioned before.</br>
+Verify a charge by calling OPay's [transaction/status](https://open.operapay.com/home/api/docbox_content_transaction.html#transaction-initialize)  with the  `reference`  mentioned before On `SERVER` Side.</br>
+
+  ```PHP
+  Body
+  {
+    "orderNo": "20019212912901281821982",
+    "reference": "test_20191123132233"
+  }
+  
+How to generate signature:
+$signature= hash_hmac("sha512", $body_json_string, OP_PRV_KEY, true);
+  
+  Header
+[
+  'Authorization: Bearer'.$signature,
+  'MerchantId: 123456789',
+  'content-type: application/json'
+]
+  ```
 
 ## Known Issue
 
 For bugs Go [Github Repo Issues](https://github.com/Recky-Lin/react-native-opay/issues)
 
-1. Uses-sdk:minSdkVersion 'xx' cannot be smaller than version 'xx' declared in library [:react-native-opay]
-- Follow the 'Suggestions' in console.<br/>
--- Sync library minsdk version and project minsdk version.<br/>
--- Or use tools:overrideLibrary="com.reckylam.rnopay" to force usage (not recommend, may lead to runtime failures)
+> 1. Uses-sdk:minSdkVersion 'xx' cannot be smaller than version 'xx' declared in library [:react-native-opay]
+> + Follow the 'Suggestions' in console.<br/>
+> + Sync library minsdk version and project minsdk version.<br/>
+> + Or use tools:overrideLibrary="com.reckylam.rnopay" to force usage (not recommend, may lead to runtime failures)
 
-2. When  run 'yarn android' console output the following words:
-- RNOpayPackage.java:26 @Override<br/>
-- RNOpayManager.java:19<br/>
--- Please update to the latest version.
+> 2. When  run 'yarn android' console output the following words:
+> + RNOpayPackage.java:26 @Override<br/>
+> + RNOpayManager.java:19<br/>
+> + Please update to the latest version.
 
-3. Could not find paysdk-debug
-- Add following codes to your project build.gradle -> allprojects -> repositories
-  ```Javascript
-  allprojects {
-      repositories {
-      ... //your code
-          flatDir {
-              dirs project(':xxx').file('libs')
-          }
-      }
-  }
-  ```
+> 3. Could not find paysdk-debug
+> - Add following codes to your project build.gradle -> allprojects -> repositories
+> ```Javascript
+>  allprojects {
+>      repositories {
+>      ... //your code
+>          flatDir {
+>              dirs project(':xxx').file('libs')
+>          }
+>      }
+>  }
+>  ```
 ## Contribution
 
 For Technical Support<br/>
